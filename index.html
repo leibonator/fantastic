@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantastic — Capital that rolls up its sleeves</title>
+<meta name="description" content="Fantastic is a hands-on investment firm that invests sweat equity — embedding seasoned operators into early-stage companies to deliver the commercial results that build generational companies.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     PostHog analytics
+     Replace REPLACE_WITH_YOUR_PROJECT_KEY with your Project API Key
+     (PostHog → Settings → Project → "Project API Key", starts with phc_)
+     If your project is in the EU, change api_host to https://eu.i.posthog.com
+     ============================================================ -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('REPLACE_WITH_YOUR_PROJECT_KEY', {api_host: 'https://us.i.posthog.com'});
+</script>
+
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Inter', sans-serif;
@@ -14,6 +33,9 @@
     font-size: 15px;
     line-height: 1.6;
   }
+
+  /* offset anchor targets so the sticky nav doesn't cover section tops */
+  section[id] { scroll-margin-top: 80px; }
 
   nav {
     display: flex;
@@ -40,6 +62,7 @@
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
   }
 
   .nav-links a {
@@ -60,7 +83,6 @@
     text-decoration: none;
   }
 
-  /* HERO */
   .hero {
     padding: 5rem 2.5rem 4rem;
     max-width: 780px;
@@ -135,14 +157,12 @@
     padding-bottom: 1px;
   }
 
-  /* DIVIDER */
   .divider {
     border: none;
     border-top: 0.5px solid #D3D1C7;
     margin: 0 2.5rem;
   }
 
-  /* HOW IT WORKS */
   .section {
     padding: 4rem 2.5rem;
     max-width: 780px;
@@ -201,7 +221,6 @@
     line-height: 1.6;
   }
 
-  /* WHAT WE DELIVER */
   .deliver-section {
     padding: 4rem 2.5rem;
     background: #1C1C1A;
@@ -250,7 +269,6 @@
     line-height: 1.5;
   }
 
-  /* FOUNDER FRIENDLY */
   .ff-section {
     padding: 4rem 2.5rem;
     max-width: 780px;
@@ -273,7 +291,6 @@
     color: #444441;
   }
 
-  /* WHO WE ARE */
   .team-section {
     padding: 4rem 2.5rem;
     background: #F0EDE6;
@@ -332,7 +349,6 @@
     line-height: 1.6;
   }
 
-  /* RIGHT FOR YOU */
   .rfy-section {
     padding: 4rem 2.5rem;
     max-width: 780px;
@@ -357,7 +373,6 @@
 
   .rfy-box p:last-child { margin-bottom: 0; }
 
-  /* FOOTER */
   footer {
     padding: 2.5rem;
     border-top: 0.5px solid #D3D1C7;
@@ -385,23 +400,33 @@
     text-decoration: none;
     border-bottom: 1px solid #D3D1C7;
   }
+
+  @media (max-width: 680px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li.hide-mobile { display: none; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero h1 { font-size: 36px; }
+    .how-steps, .deliver-grid, .team-grid { grid-template-columns: 1fr; }
+    .section, .ff-section, .rfy-section, .deliver-section, .team-section { padding: 2.5rem 1.25rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Fantastic</a>
+  <a class="nav-logo" href="#top">Fantastic</a>
   <ul class="nav-links">
-    <li><a href="#">Our approach</a></li>
-    <li><a href="#">Who we are</a></li>
-    <li><a href="#">Right for you?</a></li>
-    <li><a href="#">FAQs</a></li>
-    <li><a class="nav-cta" href="#">Let's talk</a></li>
+    <li class="hide-mobile"><a href="#approach">Our approach</a></li>
+    <li class="hide-mobile"><a href="#deliver">What we deliver</a></li>
+    <li class="hide-mobile"><a href="#team">Who we are</a></li>
+    <li class="hide-mobile"><a href="#right-for-you">Right for you?</a></li>
+    <li><a class="nav-cta" href="mailto:workwithfantastic@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20Fantastic">Let's talk</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <p class="hero-eyebrow">Sweat equity investment firm</p>
   <h1>Capital that rolls up <em>its sleeves</em></h1>
   <p class="hero-body">
@@ -409,15 +434,14 @@
   </p>
   <p class="hero-receipts">Our capital comes with calluses. And we bring receipts.</p>
   <div class="cta-row">
-    <a class="btn-primary" href="#">Let's work together</a>
-    <a class="btn-secondary" href="#">See how it works</a>
+    <a class="btn-primary" href="mailto:workwithfantastic@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20Fantastic">Let's work together</a>
+    <a class="btn-secondary" href="#approach">See how it works</a>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- HOW IT WORKS -->
-<section class="section">
+<section class="section" id="approach">
   <p class="section-label">How our model works</p>
   <h2>We invest by doing the work ourselves</h2>
   <p style="color: #5F5E5A; font-size: 15px; max-width: 580px;">Not by offering advice. Not by making introductions. We embed, execute, and earn equity when we deliver.</p>
@@ -443,14 +467,13 @@
 
 <hr class="divider">
 
-<!-- WHAT WE DELIVER -->
-<section class="deliver-section">
+<section class="deliver-section" id="deliver">
   <div class="deliver-inner">
     <p class="section-label">What we deliver</p>
     <h2>Boots on the ground, receipts in hand</h2>
     <div class="deliver-grid">
       <div class="deliver-item">
-        <h4>Revenue & ARR</h4>
+        <h4>Revenue &amp; ARR</h4>
         <p>Closing your first enterprise customers and establishing a repeatable sales motion</p>
       </div>
       <div class="deliver-item">
@@ -458,12 +481,12 @@
         <p>Sourcing, structuring, and closing your most critical integration and co-sell deals</p>
       </div>
       <div class="deliver-item">
-        <h4>Channels & resellers</h4>
+        <h4>Channels &amp; resellers</h4>
         <p>Designing and activating your channel GTM program from scratch</p>
       </div>
       <div class="deliver-item">
         <h4>New markets</h4>
-        <p>Inorganic customer acquisition, international expansion, M&A</p>
+        <p>Inorganic customer acquisition, international expansion, M&amp;A</p>
       </div>
       <div class="deliver-item">
         <h4>Commercial leadership</h4>
@@ -477,10 +500,9 @@
   </div>
 </section>
 
-<!-- FOUNDER FRIENDLY -->
 <section class="ff-section">
   <p class="section-label">Founder-friendly by design</p>
-  <h2>Aligned incentives, no strings attached</h2>
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #1C1C1A;">Aligned incentives, no strings attached</h2>
   <p style="color: #5F5E5A; font-size: 15px; max-width: 600px; margin-top: 0.5rem;">We don't seek board seats or operational control. We work for you — and we only see a return when your company grows.</p>
   <div class="ff-pills">
     <span class="pill">Equity earned on results, not promises</span>
@@ -494,8 +516,7 @@
 
 <hr class="divider">
 
-<!-- WHO WE ARE -->
-<section class="team-section">
+<section class="team-section" id="team">
   <div class="team-inner">
     <p class="section-label">Who we are</p>
     <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #1C1C1A; margin-bottom: 0.5rem;">Builders who've done it before</h2>
@@ -504,21 +525,20 @@
       <div class="team-card">
         <div class="initials">ML</div>
         <h3>Marc Leibowitz</h3>
-        <p class="role">Principal & Co-Founder</p>
-        <p>Built partnering and bizdev functions at Google and Dropbox. First business hire at StumbleUpon (scaled to $100M revenue). Transformed Adobe partnerships function. Co-founded a venture-backed fintech. Wharton BS (summa), Stanford JD.</p>
+        <p class="role">Principal &amp; Co-Founder</p>
+        <p>First business hire at StumbleUpon (scaled to $100M revenue). Early at Google, Dropbox, Adobe. Co-founded a venture-backed fintech. Wharton BS (summa), Stanford JD.</p>
       </div>
       <div class="team-card">
         <div class="initials">JM</div>
         <h3>Jonathan Manson</h3>
-        <p class="role">Principal & Co-Founder</p>
+        <p class="role">Principal &amp; Co-Founder</p>
         <p>Senior commercial and product counsel at Google across Search, Ads, Android, Cloud, and Chrome. Previously Wilson Sonsini. Harvard AB, UIUC PhD (Physics), Stanford JD.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RIGHT FOR YOU -->
-<section class="rfy-section">
+<section class="rfy-section" id="right-for-you">
   <p class="section-label">Is Fantastic right for you?</p>
   <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #1C1C1A;">Our sweet spot</h2>
   <div class="rfy-box">
@@ -527,15 +547,14 @@
     <p>Not sure if we're the right fit? We're happy to take a look under the hood at no obligation. If we think we can help, we'll say so. If not, we'll say that too.</p>
   </div>
   <div class="cta-row" style="margin-top: 2rem;">
-    <a class="btn-primary" href="mailto:workwithfantastic@gmail.com">workwithfantastic@gmail.com</a>
+    <a class="btn-primary" href="mailto:workwithfantastic@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20Fantastic">workwithfantastic@gmail.com</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-logo">Fantastic</span>
   <p>© 2026 Fantastic</p>
-  <a href="mailto:workwithfantastic@gmail.com">workwithfantastic@gmail.com</a>
+  <a href="mailto:workwithfantastic@gmail.com?subject=Let%27s%20talk%20%E2%80%94%20Fantastic">workwithfantastic@gmail.com</a>
 </footer>
 
 </body>
